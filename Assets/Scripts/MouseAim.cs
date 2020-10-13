@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class MouseAim : MonoBehaviour
 {
+    [SerializeField] private Collider2D _collider;
+
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
 
+        _collider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
