@@ -19,7 +19,7 @@ public class AnimalShot : MonoBehaviour
 
     private void OnMouseDown()
     {
-        var animalMovement = GetComponent<AnimalMovement>();
+        var animalMovement = GetComponent<ObjectMovement>();
 
         animalMovement?.MoveTween.Kill();
 

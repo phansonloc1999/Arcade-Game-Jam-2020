@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class AnimalMovement : MonoBehaviour
+public class ObjectMovement : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
 
