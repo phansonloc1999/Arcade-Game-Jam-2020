@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class AnimalShot : MonoBehaviour
@@ -18,6 +19,10 @@ public class AnimalShot : MonoBehaviour
 
     private void OnMouseDown()
     {
+        var animalMovement = GetComponent<AnimalMovement>();
+
+        animalMovement?.MoveTween.Kill();
+
         Destroy(gameObject);
     }
 }

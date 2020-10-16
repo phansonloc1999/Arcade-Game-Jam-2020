@@ -134,4 +134,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcaca46d13f28fb4f9504e5a44a7aedc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 2
+  _moveSpeed: 0
+  _moveAcrossScreenDuration: 5
