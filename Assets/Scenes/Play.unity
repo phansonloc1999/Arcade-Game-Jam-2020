@@ -311,8 +311,9 @@ GameObject:
   - component: {fileID: 1075288622}
   - component: {fileID: 1075288625}
   - component: {fileID: 1075288623}
+  - component: {fileID: 1075288624}
   m_Layer: 0
-  m_Name: Mouse Aim
+  m_Name: Capsule Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,6 +396,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 0}
+--- !u!114 &1075288624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075288620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fd3ae6c7b2484409949795e9c522fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxAmmo: 5
+  _ammoLeft: 0
 --- !u!50 &1075288625
 Rigidbody2D:
   serializedVersion: 4
@@ -686,7 +701,7 @@ PrefabInstance:
     - target: {fileID: 6986260916509353869, guid: fba38c71753dafa4fb3b3b6f5e040ad2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fba38c71753dafa4fb3b3b6f5e040ad2, type: 3}

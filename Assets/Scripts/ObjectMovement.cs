@@ -19,7 +19,8 @@ public class ObjectMovement : MonoBehaviour
         if (_moveAcrossScreenDuration != 0)
         {
             var topLeftScreenCorner = new Vector3(0, 0, 0);
-            MoveTween = transform.DOMoveX(Camera.main.ScreenToWorldPoint(topLeftScreenCorner).x, _moveAcrossScreenDuration).SetEase(Ease.Linear).SetAutoKill(true);
+            var spriteWidth = GetComponent<SpriteRenderer>().bounds.size.x;
+            MoveTween = transform.DOMoveX(Camera.main.ScreenToWorldPoint(topLeftScreenCorner).x - spriteWidth / 2, _moveAcrossScreenDuration).SetEase(Ease.Linear).SetAutoKill(true);
         }
     }
 
