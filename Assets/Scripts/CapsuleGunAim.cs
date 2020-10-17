@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseAim : MonoBehaviour
+public class CapsuleGunAim : MonoBehaviour
 {
     [SerializeField] private Collider2D _collider;
 
