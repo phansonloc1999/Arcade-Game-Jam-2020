@@ -415,7 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxAmmo: 3
   _ammoLeft: 0
-  _reloadOneBulletDuration: 2
+  _reloadOneBulletDuration: 0.5
 --- !u!50 &1075288625
 Rigidbody2D:
   serializedVersion: 4

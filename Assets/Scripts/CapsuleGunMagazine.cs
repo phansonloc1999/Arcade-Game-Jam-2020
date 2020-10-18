@@ -25,9 +25,19 @@ public class CapsuleGunMagazine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_ammoLeft <= 0 && !_isReloading)
+        if (!_isReloading)
         {
-            StartCoroutine(ReloadAll());
+            if (_ammoLeft <= 0)
+            {
+                StartCoroutine(ReloadFull());
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    StartCoroutine(ReloadOne());
+                }
+            }
         }
     }
 
@@ -36,7 +46,7 @@ public class CapsuleGunMagazine : MonoBehaviour
         AmmoLeft--;
     }
 
-    private IEnumerator ReloadAll()
+    private IEnumerator ReloadFull()
     {
         _isReloading = true;
 
@@ -46,6 +56,21 @@ public class CapsuleGunMagazine : MonoBehaviour
 
             _ammoLeft++;
         }
+
+        _isReloading = false;
+
+        yield break;
+    }
+
+    private IEnumerator ReloadOne()
+    {
+        _isReloading = true;
+
+        yield return new WaitForSeconds(_reloadOneBulletDuration);
+
+        _ammoLeft = Mathf.Min(_maxAmmo, _ammoLeft + 1);
+
+        _isReloading = false;
 
         yield break;
     }
