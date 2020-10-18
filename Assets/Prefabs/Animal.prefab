@@ -135,4 +135,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 0
-  _moveAcrossScreenDuration: 2.5
+  _moveAcrossScreenDuration: 7
