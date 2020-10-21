@@ -9,10 +9,17 @@ public class Bear : MonoBehaviour
 
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
-    private static float? _middleScreenX = null;
-
     [SerializeField] private bool _startRevealing;
 
+    private static CapsuleGunMagazine _capsuleGunMagazine = null;
+
+    private static float _revealingDuration = 1.5f;
+
+    private static int _damageToPlayer = 4;
+
+    private static float? _middleScreenX = null;
+
+    private static float _preventReloadingDuration = 2.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +32,11 @@ public class Bear : MonoBehaviour
         }
 
         _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (_capsuleGunMagazine == null)
+        {
+            _capsuleGunMagazine = GameObject.Find("Capsule Gun").GetComponent<CapsuleGunMagazine>();
+        }
     }
 
     // Update is called once per frame
@@ -32,12 +44,37 @@ public class Bear : MonoBehaviour
     {
         if (!_startRevealing)
         {
-            if (Mathf.Floor(_treeTransform.position.x) == Mathf.Floor(_middleScreenX.Value))
+            if (TreeIsAtMiddleScreen())
             {
-                transform.DOLocalMoveX(_spriteRenderer.bounds.size.x * transform.localScale.x / transform.parent.localScale.x / 2, 1.5f);
+                // Move left to reveal right half of the bear's sprite behind the tree
+                transform.DOLocalMoveX(_spriteRenderer.bounds.size.x * transform.localScale.x / transform.parent.localScale.x / 2, _revealingDuration)
+                .OnComplete(
+                    () =>
+                    {
+                        StartCoroutine(Routine());
+                    }
+                );
 
                 _startRevealing = true;
             }
         }
+    }
+
+    bool TreeIsAtMiddleScreen()
+    {
+        return Mathf.Floor(_treeTransform.position.x) == Mathf.Floor(_middleScreenX.Value);
+    }
+
+    IEnumerator Routine()
+    {
+        PlayerHealth.TakeDamage(_damageToPlayer);
+
+        _capsuleGunMagazine.enabled = false;
+
+        yield return new WaitForSeconds(_preventReloadingDuration);
+
+        _capsuleGunMagazine.enabled = true;
+
+        yield break;
     }
 }

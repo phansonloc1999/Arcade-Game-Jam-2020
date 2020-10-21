@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7384422312717646551}
   - component: {fileID: 7384422312717646550}
   - component: {fileID: 229593736}
+  - component: {fileID: 8855874702846305002}
+  - component: {fileID: 7746154539193395639}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Untagged
@@ -26,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7384422312717646552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.02, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: -0.028, z: 0}
+  m_LocalScale: {x: 0.734327, y: 0.38357112, z: 1}
   m_Children: []
   m_Father: {fileID: 7384422313722495711}
   m_RootOrder: 0
@@ -113,6 +115,34 @@ PolygonCollider2D:
       - {x: 0.029318577, y: -0.08469338}
       - {x: 0.06786555, y: -0.051486664}
       - {x: 0.08900429, y: 0.004183366}
+--- !u!114 &8855874702846305002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7384422312717646552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b465bd80a915141bfc049daad0c5d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectMovement: {fileID: 1212836480}
+--- !u!114 &7746154539193395639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7384422312717646552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e12988f43d152d46acf0e67736b3af1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _treeTransform: {fileID: 0}
+  _spriteRenderer: {fileID: 0}
+  _startRevealing: 0
 --- !u!1 &7384422313722495520
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7384422313722495711}
   - component: {fileID: 7384422313722495710}
+  - component: {fileID: 1212836480}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -139,7 +170,7 @@ Transform:
   m_GameObject: {fileID: 7384422313722495520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.38, y: 2.17, z: -1.5683594}
-  m_LocalScale: {x: 12.061923, y: 30.713394, z: 12.061923}
+  m_LocalScale: {x: 8.689997, y: 20.868084, z: 14.668341}
   m_Children:
   - {fileID: 7384422312717646551}
   m_Father: {fileID: 0}
@@ -195,3 +226,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1212836480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7384422313722495520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcaca46d13f28fb4f9504e5a44a7aedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 0
+  _moveAcrossScreenDuration: 8

@@ -7,6 +7,8 @@ public class AnimalShot : MonoBehaviour
 {
     private static CapsuleGunMagazine _capsuleGunMagScript;
 
+    [SerializeField] private ObjectMovement _objectMovement;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +28,6 @@ public class AnimalShot : MonoBehaviour
     {
         if (_capsuleGunMagScript.AmmoLeft > 0)
         {
-            var animalMovement = GetComponent<ObjectMovement>();
-
-            animalMovement?.MoveTween.Kill();
-
             Destroy(gameObject);
 
             _capsuleGunMagScript.DecreaseAmmo();
