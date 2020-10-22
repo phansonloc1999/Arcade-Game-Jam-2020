@@ -7,7 +7,6 @@ public class Bear : MonoBehaviour
 {
     [SerializeField] private Transform _treeTransform;
 
-    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     [SerializeField] private bool _startRevealing;
 
@@ -21,6 +20,10 @@ public class Bear : MonoBehaviour
 
     private static float _preventReloadingDuration = 2.0f;
 
+    private static SpriteRenderer _spriteRenderer;
+
+    private static SpriteRenderer _treeSpriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +35,7 @@ public class Bear : MonoBehaviour
         }
 
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _treeSpriteRenderer = transform.parent.GetComponent<SpriteRenderer>();
 
         if (_capsuleGunMagazine == null)
         {
@@ -47,7 +51,7 @@ public class Bear : MonoBehaviour
             if (TreeIsAtMiddleScreen())
             {
                 // Move left to reveal right half of the bear's sprite behind the tree
-                transform.DOLocalMoveX(_spriteRenderer.bounds.size.x * transform.localScale.x / transform.parent.localScale.x / 2, _revealingDuration)
+                transform.DOLocalMoveX(_spriteRenderer.bounds.size.x / 2 + _treeSpriteRenderer.bounds.size.x / 2, _revealingDuration)
                 .OnComplete(
                     () =>
                     {
@@ -67,6 +71,8 @@ public class Bear : MonoBehaviour
 
     IEnumerator Routine()
     {
+        GetComponent<Animator>().SetTrigger("isAttacking");
+
         PlayerHealth.TakeDamage(_damageToPlayer);
 
         _capsuleGunMagazine.enabled = false;
