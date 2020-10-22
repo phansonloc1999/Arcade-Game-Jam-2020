@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wolf : MonoBehaviour
+public class Pig : MonoBehaviour
 {
     [SerializeField] private float _dealDamageInterval;
 
     [SerializeField] private int _damageAmmount;
 
     [SerializeField] private bool _startDealingDamage;
+
+    private Animator _animator;
 
     private static float? _startDealingDamageX = null;
     private static float? _stopDealingDamageX = null;
@@ -21,6 +23,9 @@ public class Wolf : MonoBehaviour
             _startDealingDamageX = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0)).x;
             _stopDealingDamageX = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).x;
         }
+
+        _animator = GetComponent<Animator>();
+        _animator.SetBool("isPig", true);
     }
 
     // Update is called once per frame

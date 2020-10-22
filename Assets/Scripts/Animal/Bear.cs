@@ -7,8 +7,9 @@ public class Bear : MonoBehaviour
 {
     [SerializeField] private Transform _treeTransform;
 
-
     [SerializeField] private bool _startRevealing;
+
+    [SerializeField] private Animator _animator;
 
     private static CapsuleGunMagazine _capsuleGunMagazine = null;
 
@@ -23,6 +24,7 @@ public class Bear : MonoBehaviour
     private static SpriteRenderer _spriteRenderer;
 
     private static SpriteRenderer _treeSpriteRenderer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,9 @@ public class Bear : MonoBehaviour
         {
             _capsuleGunMagazine = GameObject.Find("Capsule Gun").GetComponent<CapsuleGunMagazine>();
         }
+
+        _animator = GetComponent<Animator>();
+        _animator.SetBool("isBear", true);
     }
 
     // Update is called once per frame
@@ -71,7 +76,7 @@ public class Bear : MonoBehaviour
 
     IEnumerator Routine()
     {
-        GetComponent<Animator>().SetTrigger("isAttacking");
+        _animator.SetTrigger("isBearAttacking");
 
         PlayerHealth.TakeDamage(_damageToPlayer);
 
