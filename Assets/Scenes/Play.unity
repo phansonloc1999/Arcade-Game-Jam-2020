@@ -474,6 +474,8 @@ GameObject:
   - component: {fileID: 1075288621}
   - component: {fileID: 1075288622}
   - component: {fileID: 1075288626}
+  - component: {fileID: 1075288628}
+  - component: {fileID: 1075288625}
   - component: {fileID: 1075288623}
   - component: {fileID: 1075288624}
   - component: {fileID: 1075288627}
@@ -492,7 +494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075288620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.22, y: -0.38, z: 0}
+  m_LocalPosition: {x: 0.53, y: 9.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -576,6 +578,22 @@ MonoBehaviour:
   _maxAmmo: 3
   _ammoLeft: 0
   _reloadOneBulletDuration: 0.5
+--- !u!58 &1075288625
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075288620}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.15
 --- !u!95 &1075288626
 Animator:
   serializedVersion: 3
@@ -608,6 +626,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animalsToBeBombed: []
+--- !u!50 &1075288628
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075288620}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1199570989
 PrefabInstance:
   m_ObjectHideFlags: 0
