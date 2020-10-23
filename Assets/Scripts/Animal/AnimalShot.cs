@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class AnimalShot : MonoBehaviour
 {
-    private static CapsuleGunMagazine _capsuleGunMagScript;
-
     [SerializeField] private ObjectMovement _objectMovement;
+
+    private static Bomb _bomb;
+
+    private static CapsuleGunMagazine _capsuleGunMagScript;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +17,7 @@ public class AnimalShot : MonoBehaviour
         if (_capsuleGunMagScript == null)
         {
             _capsuleGunMagScript = GameObject.Find("Capsule Gun").GetComponent<CapsuleGunMagazine>();
+            _bomb = GameObject.Find("Capsule Gun").GetComponent<Bomb>();
         }
     }
 
@@ -32,5 +35,10 @@ public class AnimalShot : MonoBehaviour
 
             _capsuleGunMagScript.DecreaseAmmo();
         }
+    }
+
+    private void OnDestroy()
+    {
+        _bomb.RemoveOnScreenAnimal(gameObject);
     }
 }

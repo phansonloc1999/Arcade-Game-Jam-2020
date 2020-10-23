@@ -247,7 +247,7 @@ PrefabInstance:
     - target: {fileID: 6986260916509353869, guid: fba38c71753dafa4fb3b3b6f5e040ad2,
         type: 3}
       propertyPath: m_Name
-      value: Animal
+      value: Bear
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fba38c71753dafa4fb3b3b6f5e040ad2, type: 3}
