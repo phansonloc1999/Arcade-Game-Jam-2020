@@ -15,6 +15,8 @@ public class Crow : MonoBehaviour
 
     private static List<Vector3> _flightRouteQueue;
 
+    private Sequence _moveSequence;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,12 +47,12 @@ public class Crow : MonoBehaviour
 
     public void StartFollowingFlightRoute()
     {
-        var sequence = DOTween.Sequence();
+        _moveSequence = DOTween.Sequence();
         for (int i = 0; i < _flightRouteQueue.Count; i++)
         {
-            sequence.Append(transform.DOMove(_flightRouteQueue[i], 2.0f).SetEase(Ease.Linear));
+            _moveSequence.Append(transform.DOMove(_flightRouteQueue[i], 2.0f).SetEase(Ease.Linear));
         }
-        sequence.OnComplete(() =>
+        _moveSequence.OnComplete(() =>
         {
             GetComponent<ObjectMovement>().enabled = true;
         });
@@ -59,5 +61,10 @@ public class Crow : MonoBehaviour
     public void DisableObjectMovement()
     {
         GetComponent<ObjectMovement>().enabled = false;
+    }
+
+    private void OnDestroy()
+    {
+        _moveSequence.Kill();
     }
 }
