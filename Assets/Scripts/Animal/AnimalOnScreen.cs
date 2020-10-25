@@ -4,8 +4,15 @@ public class AnimalOnScreen : MonoBehaviour
 {
     [SerializeField] private Bomb _bomb;
 
+    private bool _isOnScreen;
+    public bool IsOnScreen { get => _isOnScreen; set => _isOnScreen = value; }
+
     private static GameObject _onScreenStartThreshold;
     private static GameObject _onScreenFinishThreshold;
+
+    public delegate void CrossingOnScreenStartThreshold();
+
+    public event CrossingOnScreenStartThreshold OnCrossingOnScreenStartThreshold;
 
     private void Start()
     {
@@ -21,6 +28,8 @@ public class AnimalOnScreen : MonoBehaviour
         if (other.gameObject == _onScreenStartThreshold)
         {
             _bomb.AddOnScreenAnimal(gameObject);
+
+            OnCrossingOnScreenStartThreshold?.Invoke();
         }
 
         if (other.gameObject == _onScreenFinishThreshold)
