@@ -24,7 +24,6 @@ public class ObjectMovement : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (_moveSpeed != 0)
