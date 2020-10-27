@@ -9,6 +9,10 @@ public class Crow : MonoBehaviour
 
     [SerializeField] private AnimalOnScreen _animalOnScreen;
 
+    [SerializeField] private Transform _flightMinimumPointTransform;
+
+    [SerializeField] private int _damage;
+
     private bool _startedFlightRoute = false;
 
     private static GameObject _crowflightRoute;
@@ -50,8 +54,19 @@ public class Crow : MonoBehaviour
         _moveSequence = DOTween.Sequence();
         for (int i = 0; i < _flightRouteQueue.Count; i++)
         {
-            _moveSequence.Append(transform.DOMove(_flightRouteQueue[i], 2.0f).SetEase(Ease.Linear));
+            if (_flightRouteQueue[i] == _flightMinimumPointTransform.position)
+            {
+                _moveSequence.Append(transform.DOMove(_flightRouteQueue[i], 2.0f)
+                .SetEase(Ease.Linear)
+                .OnComplete(() =>
+                {
+                    PlayerHealth.TakeDamage(_damage);
+                }));
+            }
+            else _moveSequence.Append(transform.DOMove(_flightRouteQueue[i], 2.0f)
+                .SetEase(Ease.Linear));
         }
+
         _moveSequence.OnComplete(() =>
         {
             GetComponent<ObjectMovement>().enabled = true;
