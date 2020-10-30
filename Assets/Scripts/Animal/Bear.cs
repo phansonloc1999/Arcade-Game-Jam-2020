@@ -15,7 +15,7 @@ public class Bear : MonoBehaviour
 
     private static float _revealingDuration = 1.5f;
 
-    private static int _damageToPlayer = 4;
+    private static int _damageToPlayer = 2;
 
     private static float? _middleScreenX = null;
 
@@ -78,8 +78,6 @@ public class Bear : MonoBehaviour
     {
         _animator.SetTrigger("isBearAttacking");
 
-        PlayerHealth.TakeDamage(_damageToPlayer);
-
         _capsuleGunMagazine.enabled = false;
 
         yield return new WaitForSeconds(_preventReloadingDuration);
@@ -87,5 +85,10 @@ public class Bear : MonoBehaviour
         _capsuleGunMagazine.enabled = true;
 
         yield break;
+    }
+
+    private void DamagePlayer()
+    {
+        PlayerHealth.TakeDamage(_damageToPlayer);
     }
 }
