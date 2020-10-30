@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CapsuleGunMagazine : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class CapsuleGunMagazine : MonoBehaviour
     public int AmmoLeft { get => _ammoLeft; set => _ammoLeft = value; }
 
     [SerializeField] private float _reloadOneBulletDuration;
+
+    [SerializeField] private GameObject[] _capsuleAmmoUIElements;
+
+    [SerializeField] private GameObject _capsule;
+
+    [SerializeField] private Text _capsuleAmmoLeftText;
 
     private bool _isReloading;
 
@@ -44,6 +51,7 @@ public class CapsuleGunMagazine : MonoBehaviour
     public void DecreaseAmmo()
     {
         AmmoLeft--;
+        UpdateCapsuleAmmoUI();
     }
 
     private IEnumerator ReloadFull()
@@ -59,6 +67,8 @@ public class CapsuleGunMagazine : MonoBehaviour
 
         _isReloading = false;
 
+        UpdateCapsuleAmmoUI();
+
         yield break;
     }
 
@@ -72,6 +82,26 @@ public class CapsuleGunMagazine : MonoBehaviour
 
         _isReloading = false;
 
+        UpdateCapsuleAmmoUI();
+
         yield break;
+    }
+
+    private void UpdateCapsuleAmmoUI()
+    {
+        for (int i = 0; i < _ammoLeft; i++)
+        {
+            _capsuleAmmoUIElements[i].SetActive(true);
+        }
+
+        for (int i = _ammoLeft; i < _maxAmmo; i++)
+        {
+            _capsuleAmmoUIElements[i].SetActive(false);
+            // Destroy(_capsuleAmmoUIElements[i]);
+        }
+
+        _capsuleAmmoLeftText.text = "Ammo " + _ammoLeft;
+
+        Canvas.ForceUpdateCanvases();
     }
 }

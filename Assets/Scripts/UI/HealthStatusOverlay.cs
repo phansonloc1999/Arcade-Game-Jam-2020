@@ -25,6 +25,9 @@ public class HealthStatusOverlay : MonoBehaviour
 
     public void UpdateColor()
     {
-        _image.color = _colors[_colors.Length - PlayerHealth.CurrentHealth];
+        if (PlayerHealth.CurrentHealth > 0)
+        {
+            _image.color = _colors[_colors.Length - PlayerHealth.CurrentHealth];
+        }
     }
 }
