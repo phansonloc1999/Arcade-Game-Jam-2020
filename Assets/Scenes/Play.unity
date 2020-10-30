@@ -511,6 +511,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209845961}
   m_CullTransparentMesh: 0
+--- !u!1 &226605403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4163616913770236332, guid: 47365a4c783380948933296294260d24,
+    type: 3}
+  m_PrefabInstance: {fileID: 146270293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &236675176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -888,7 +894,7 @@ GameObject:
   - component: {fileID: 315817686}
   - component: {fileID: 315817685}
   m_Layer: 5
-  m_Name: CapsuleCountText
+  m_Name: BombLeftText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2176,7 +2182,7 @@ RectTransform:
   m_AnchorMin: {x: 0.015624999, y: 0.9791667}
   m_AnchorMax: {x: 0.015624999, y: 0.9791667}
   m_AnchoredPosition: {x: 21.068527, y: -29.986214}
-  m_SizeDelta: {x: 54.295914, y: 0}
+  m_SizeDelta: {x: 54.295914, y: 98.75301}
   m_Pivot: {x: 0.4999999, y: 0.5000001}
 --- !u!114 &779259121
 MonoBehaviour:
@@ -2216,7 +2222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
-  m_VerticalFit: 2
+  m_VerticalFit: 0
 --- !u!1001 &869545634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2671,6 +2677,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1032312327}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1048848334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4163616913770236332, guid: 47365a4c783380948933296294260d24,
+    type: 3}
+  m_PrefabInstance: {fileID: 1406265731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1063768229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2972,6 +2984,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animalsToBeBombed: []
+  _bombText: {fileID: 315817685}
+  _maxBomb: 3
+  _bombLeft: 0
+  _bombImages:
+  - {fileID: 226605403}
+  - {fileID: 1612417622}
+  - {fileID: 1048848334}
 --- !u!50 &1075288628
 Rigidbody2D:
   serializedVersion: 4
@@ -3505,6 +3524,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c158f39384a40be4ca757e76d2e777f7, type: 3}
+--- !u!1 &1612417622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4163616913770236332, guid: 47365a4c783380948933296294260d24,
+    type: 3}
+  m_PrefabInstance: {fileID: 432674771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1639646390
 GameObject:
   m_ObjectHideFlags: 0
