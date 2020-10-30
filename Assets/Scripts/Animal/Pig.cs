@@ -26,6 +26,8 @@ public class Pig : MonoBehaviour
 
         _animator = GetComponent<Animator>();
         _animator.SetBool("isPig", true);
+
+        _startDealingDamage = false;
     }
 
     // Update is called once per frame
