@@ -8,7 +8,7 @@ public class Pig : MonoBehaviour
 
     [SerializeField] private int _damageAmmount;
 
-    [SerializeField] private bool _startDealingDamage;
+    [SerializeField] private bool _dealtDamage;
 
     private Animator _animator;
 
@@ -27,28 +27,17 @@ public class Pig : MonoBehaviour
         _animator = GetComponent<Animator>();
         _animator.SetBool("isPig", true);
 
-        _startDealingDamage = false;
+        _dealtDamage = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x < _startDealingDamageX && transform.position.x > _stopDealingDamageX && !_startDealingDamage)
+        if (transform.position.x < Constants.Instance.TopLeftScreenWorldPos.x && !_dealtDamage)
         {
-            _startDealingDamage = true;
-            StartCoroutine(DealDamageToPlayer());
-        }
-    }
-
-    IEnumerator DealDamageToPlayer()
-    {
-        while (_startDealingDamage)
-        {
-            yield return new WaitForSeconds(_dealDamageInterval);
+            _dealtDamage = true;
 
             PlayerHealth.TakeDamage(_damageAmmount);
         }
-
-        yield break;
     }
 }

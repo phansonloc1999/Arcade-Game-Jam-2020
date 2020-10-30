@@ -765,9 +765,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba47ed904ee434943b9ac7809707e18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dealDamageInterval: 0.5
-  _damageAmmount: 0
-  _startDealingDamage: 0
+  _dealDamageInterval: 0
+  _damageAmmount: 1
+  _dealtDamage: 0
 --- !u!4 &258599927 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6986260916509353858, guid: fba38c71753dafa4fb3b3b6f5e040ad2,
@@ -1015,9 +1015,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba47ed904ee434943b9ac7809707e18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dealDamageInterval: 0.5
-  _damageAmmount: 0
-  _startDealingDamage: 0
+  _dealDamageInterval: 0
+  _damageAmmount: 1
+  _dealtDamage: 0
 --- !u!4 &372113706 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6986260916509353858, guid: fba38c71753dafa4fb3b3b6f5e040ad2,
@@ -2021,9 +2021,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba47ed904ee434943b9ac7809707e18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dealDamageInterval: 0.5
-  _damageAmmount: 0
-  _startDealingDamage: 0
+  _dealDamageInterval: 0
+  _damageAmmount: 1
+  _dealtDamage: 0
 --- !u!4 &636655361 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6986260916509353858, guid: fba38c71753dafa4fb3b3b6f5e040ad2,
@@ -2338,7 +2338,7 @@ PrefabInstance:
     - target: {fileID: 6986260916509353858, guid: fba38c71753dafa4fb3b3b6f5e040ad2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.21
+      value: 17.330004
       objectReference: {fileID: 0}
     - target: {fileID: 6986260916509353858, guid: fba38c71753dafa4fb3b3b6f5e040ad2,
         type: 3}
@@ -2441,9 +2441,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba47ed904ee434943b9ac7809707e18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dealDamageInterval: 0.5
-  _damageAmmount: 0
-  _startDealingDamage: 0
+  _dealDamageInterval: 0
+  _damageAmmount: 1
+  _dealtDamage: 0
 --- !u!4 &908730902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6986260916509353858, guid: fba38c71753dafa4fb3b3b6f5e040ad2,
@@ -2468,9 +2468,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba47ed904ee434943b9ac7809707e18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dealDamageInterval: 0.5
+  _dealDamageInterval: 0
   _damageAmmount: 1
-  _startDealingDamage: 0
+  _dealtDamage: 0
 --- !u!4 &931614703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6986260916509353858, guid: fba38c71753dafa4fb3b3b6f5e040ad2,
@@ -3139,7 +3139,7 @@ PrefabInstance:
     - target: {fileID: 6986260916509353858, guid: fba38c71753dafa4fb3b3b6f5e040ad2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.5099964
+      value: 10.63
       objectReference: {fileID: 0}
     - target: {fileID: 6986260916509353858, guid: fba38c71753dafa4fb3b3b6f5e040ad2,
         type: 3}
@@ -3936,7 +3936,7 @@ PrefabInstance:
     - target: {fileID: 6986260916509353858, guid: fba38c71753dafa4fb3b3b6f5e040ad2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.699996
+      value: 13.82
       objectReference: {fileID: 0}
     - target: {fileID: 6986260916509353858, guid: fba38c71753dafa4fb3b3b6f5e040ad2,
         type: 3}

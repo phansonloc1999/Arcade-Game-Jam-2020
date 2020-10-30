@@ -15,7 +15,7 @@ public class Bear : MonoBehaviour
 
     private static float _revealingDuration = 1.5f;
 
-    private static int _damageToPlayer = 2;
+    private static int _damageToPlayer = 1;
 
     private static float? _middleScreenX = null;
 
